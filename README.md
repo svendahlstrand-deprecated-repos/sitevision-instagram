@@ -53,3 +53,7 @@ Antalet bilder som ska visas. Om inställningen inte är med visas 20 bilder. Ex
 Vems Instagram-flöde som ska visas. Om inställningen inte är med visas ditt flöde. Det finns en tjänst som hjälper dig [hitta användar-id](http://jelled.com/instagram/lookup-user-id). Exempel:
 
     userId: 7830961
+
+## Sätt cache på skript-modulen
+
+Det är en bra idé att sätta cache på skriptmodulen. Det gör att sidan kommer ladda snabbare. Använd inställningen *Per sida* och sätt en ganska lång giltighetstid, till exempel en timma. [Läs mer om Cache hos SiteVision](http://help3.sitevision.se/SiteVision_3_0/portletCache.html).

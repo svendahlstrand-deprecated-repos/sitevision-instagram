@@ -1,0 +1,9 @@
+#if ($medias.size() > 0)
+  <ul class="instagram-medias">
+    #foreach ($media in $medias)
+      <li>
+        <a href="$media.get('link', $media)"><img src="$media.get('thumbnail', $media)" alt="$!media.get('captionText', $media)" /></a>
+      </li>
+    #end
+  </ul>
+#end

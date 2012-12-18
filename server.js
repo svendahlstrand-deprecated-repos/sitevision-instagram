@@ -35,6 +35,7 @@ function Media(data) {
   this.thumbnail = data.images.thumbnail.url;
   this.standardResolution = data.images.standard_resolution.url;
   this.captionText = data.caption && data.caption.text || null;
+  this.tags = data.tags.join(', ');
 }
 
 var instagram = new Instagram(settings);

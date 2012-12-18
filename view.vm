@@ -2,7 +2,13 @@
   <ul class="instagram-medias">
     #foreach ($media in $medias)
       <li>
-        <a href="$media.get('link', $media)"><img src="$media.get('thumbnail', $media)" alt="$!media.get('captionText', $media)" /></a>
+        <a class="sv-resizable-img" href="$media.get('standardResolution', $media)"><img src="$media.get('thumbnail', $media)" alt="" /></a>
+        #if ($media.get('captionText', $media).length() > 0)
+          <p>$media.get('captionText', $media)</p>
+        #end
+        #if ($media.get('tags', $media).length() > 0)
+          <p>Taggar: $media.get('tags', $media)</p>
+        #end
       </li>
     #end
   </ul>

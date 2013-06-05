@@ -1,6 +1,6 @@
 var settings = {
-  accessToken: 'YOUR ACCESS TOKEN',
-  numberOfMedia: 5
+  accessToken: '289165620.22c41e6.adf8c862f90b4cbe8e07c7beba45a2fd',
+  numberOfMedia: 5,
 };
 
 // You shouldn't need to edit below this line!
@@ -28,6 +28,10 @@ Instagram.prototype.recentMediaFromUser = function (userId) {
   return this.get('/users/' + userId + '/media/recent');
 };
 
+Instagram.prototype.recentMediaForTagName = function (tagName) {
+  return this.get('/tags/' + tagName + '/media/recent');
+};
+
 function Media(data) {
   this.createdTime = data.created_time;
   this.link = data.link;
@@ -39,9 +43,20 @@ function Media(data) {
 }
 
 var instagram = new Instagram(settings);
-var json = settings.userId ? instagram.recentMediaFromUser(settings.userId) : instagram.selfFeed();
-var numberOfMedia = settings.numberOfMedia < json.data.length ? settings.numberOfMedia : json.data.length;
+var json;
 var medias = [];
+
+if (settings.tagName) {
+  json = instagram.recentMediaForTagName(settings.tagName);
+}
+else if(settings.userId) {
+  json = instagram.recentMediaFromUser(settings.userId);
+}
+else {
+  json = instagram.selfFeed();
+}
+
+var numberOfMedia = settings.numberOfMedia < json.data.length ? settings.numberOfMedia : json.data.length;
 
 for (var i = 0; i < numberOfMedia; i++) {
   medias.push(new Media(json.data[i]));

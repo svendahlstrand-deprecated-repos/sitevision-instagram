@@ -1,3 +1,5 @@
+/* globals importPackage, java, Packages, IOUtils */
+
 var settings = {
   accessToken: 'your-access-token',
   numberOfMedia: 5,

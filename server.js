@@ -1,5 +1,5 @@
 var settings = {
-  accessToken: '289165620.22c41e6.adf8c862f90b4cbe8e07c7beba45a2fd',
+  accessToken: 'your-access-token',
   numberOfMedia: 5,
 };
 

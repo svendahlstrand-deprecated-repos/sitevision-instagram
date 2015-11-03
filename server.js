@@ -40,6 +40,8 @@ function Media(data) {
   this.standardResolution = data.images.standard_resolution.url;
   this.captionText = data.caption && data.caption.text || null;
   this.tags = data.tags.join(', ');
+  this.username = data.user && data.user.username && data.user.username || null;
+  this.profilePicture = data.user && data.user.profile_picture && data.user.profile_picture  || null;
 }
 
 var instagram = new Instagram(settings);

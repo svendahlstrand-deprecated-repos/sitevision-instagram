@@ -1,14 +1,21 @@
 #if ($medias.size() > 0)
-  <ul class="instagram-medias">
+  <ul class="lp-instagram-medias">
     #foreach ($media in $medias)
       <li>
-        <a class="sv-resizable-img" href="$media.get('standardResolution', $media)"><img src="$media.get('thumbnail', $media)" alt="" /></a>
-        #if ($media.get('captionText', $media).length() > 0)
-          <p>$media.get('captionText', $media)</p>
-        #end
-        #if ($media.get('tags', $media).length() > 0)
-          <p>Taggar: $media.get('tags', $media)</p>
-        #end
+        <img src="$media.get('lowResolution', $media)" alt="" />
+        <p class="lp-instagram-profile">
+          #if ($media.get('profilePicture', $media).length() > 0)
+            <img src="$media.get('profilePicture', $media)" alt="" />
+          #end
+          #if ($media.get('username', $media).length() > 0)
+            <a href="https://instagram.com/$media.get('username', $media)">$media.get('username', $media)</a>
+          #end
+        </p>
+        <p>
+          #if ($media.get('captionText', $media).length() > 0)
+            $media.get('captionText', $media)
+          #end
+        </p>
       </li>
     #end
   </ul>

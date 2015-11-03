@@ -34,7 +34,7 @@ Längst upp i skript-delen gör du inställningar. Det ser ut så här:
       userId: 12345
     };
 
-Alla inställningar behöver inte vara med.
+Alla inställningar behöver inte vara med. Om `userId` och `tagName` saknas visas ditt Instagram-flöde.
 
 #### accessToken
 
@@ -50,9 +50,15 @@ Antalet bilder som ska visas. Om inställningen inte är med visas 20 bilder. Ex
 
 #### userId
 
-Vems Instagram-flöde som ska visas. Om inställningen inte är med visas ditt flöde. Det finns en tjänst som hjälper dig [hitta användar-id](http://jelled.com/instagram/lookup-user-id). Exempel:
+Vems Instagram-flöde som ska visas. Det finns en tjänst som hjälper dig [hitta användar-id](http://jelled.com/instagram/lookup-user-id). Exempel:
 
     userId: 7830961
+
+#### tagName
+
+Välj en tagg att följa. Exempel:
+
+    tagName: 'mat'
 
 ## Sätt cache på skript-modulen
 
